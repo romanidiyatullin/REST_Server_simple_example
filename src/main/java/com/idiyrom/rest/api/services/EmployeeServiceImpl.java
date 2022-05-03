@@ -27,13 +27,13 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     @Transactional
-    public void addOrEditEmployee(Employee employee) {
-        employeeDAO.addOrEditEmployee(employee);
+    public int addOrEditEmployee(Employee employee) {
+        return employeeDAO.addOrEditEmployee(employee);
     }
 
     @Override
     @Transactional
-    public void deleteEmployee(Employee employee) {
-        employeeDAO.deleteEmployee(employee);
+    public int deleteEmployee(Employee employee) {
+        return employeeDAO.deleteEmployee(employee);
     }
 }

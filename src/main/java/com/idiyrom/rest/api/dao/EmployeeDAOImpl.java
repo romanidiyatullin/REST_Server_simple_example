@@ -26,15 +26,17 @@ public class EmployeeDAOImpl implements EmployeeDAO{
     }
 
     @Override
-    public void addOrEditEmployee(Employee employee) {
+    public int addOrEditEmployee(Employee employee) {
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(employee);
-
+        return employee.getId();
     }
 
     @Override
-    public void deleteEmployee(Employee employee) {
+    public int deleteEmployee(Employee employee) {
         Session session = sessionFactory.getCurrentSession();
+        int id = employee.getId();
         session.delete(employee);
+        return id;
     }
 }
